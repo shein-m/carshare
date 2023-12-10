@@ -10,7 +10,10 @@ const FavoritePage = () => {
     <Container>
       <ul className="list-none flex flex-wrap justify-center md:justify-between xl:justify-normal gap-x-[30px] gap-y-[50px] ">
         {data.length > 0 ? (
-          data.map((el) => <Card key={el.id} data={el} />)
+          data
+            .slice()
+            .reverse()
+            .map((el) => <Card key={el.id} data={el} />)
         ) : (
           <div>Favorites is Empty</div>
         )}
