@@ -3,8 +3,9 @@ import formatAddress from "../../helpers/formatDate";
 import CardOptions from "../CardOptions/CardOptions";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { favoritesSlice } from "../../redux/favorites/favorites-slice";
+import { getFavorites } from "../../redux/favorites/favorites-selector";
 
 const Card = ({ data }) => {
   const dispatch = useDispatch();
@@ -26,22 +27,40 @@ const Card = ({ data }) => {
 
   const { city = "", country = "" } = formatAddress(address);
 
-  const handleClick = () => {};
+  const handleRemoveFavorite = () => {
+    dispatch(removeFromFavorites(id));
+  };
 
   const handleFavorite = () => {
     dispatch(addToFavorites(data));
   };
 
+  const handleClick = () => {};
+
+  const favorites = useSelector(getFavorites);
+
+  const isFavorite = favorites.find((el) => el.id === id);
+
   return (
     <li className="w-[274px] h-[426px] flex flex-col">
       <div className="relative">
-        <FaRegHeart
-          onClick={handleFavorite}
-          width="18"
-          height="18"
-          className="absolute right-[14px] top-[14px] cursor-pointer"
-          fill="#000000"
-        />
+        {isFavorite ? (
+          <FaHeart
+            onClick={handleRemoveFavorite}
+            width="18"
+            height="18"
+            className="absolute right-[14px] top-[14px] cursor-pointer"
+            fill="#000000"
+          />
+        ) : (
+          <FaRegHeart
+            onClick={handleFavorite}
+            width="18"
+            height="18"
+            className="absolute right-[14px] top-[14px] cursor-pointer"
+            fill="#000000"
+          />
+        )}
 
         <img
           src={img}
