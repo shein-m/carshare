@@ -1,6 +1,12 @@
+import twElements from "tw-elements/dist/plugin.cjs";
+
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/tw-elements/dist/js/**/*.js",
+  ],
   theme: {
     screens: {
       sm: "420px",
@@ -21,7 +27,31 @@ export default {
           xl: "1rem",
         },
       },
+
+      // fontFamily: {
+      //   manrope: ["Manrope", "sans-serif"],
+      // },
+
+      colors: {
+        blue: "#3470FF",
+        blueActive: "#0B44CD",
+        white: "#ffffff",
+
+        text: "#121417",
+        textOpacity: "rgba(18, 20, 23, 0.50",
+      },
+
+      fontSize: {
+        sm: "12px",
+        base: "14px",
+        xl: "16px",
+        "2xl": "18px",
+      },
+
+      backgroundImage: {
+        "main-page-desktop": "url('./src/images/main/bgpng.png')",
+      },
     },
   },
-  plugins: [],
+  plugins: [twElements],
 };

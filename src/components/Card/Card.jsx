@@ -52,25 +52,23 @@ const Card = ({ data }) => {
         {isFavorite ? (
           <FaHeart
             onClick={handleRemoveFavorite}
-            width="18"
-            height="18"
-            className="absolute right-[14px] top-[14px] cursor-pointer"
-            fill="#000000"
+            size={18}
+            className="svg-icons"
+            fill="#3470FF"
           />
         ) : (
           <FaRegHeart
             onClick={handleFavorite}
-            width="18"
-            height="18"
-            className="absolute right-[14px] top-[14px] cursor-pointer"
-            fill="#000000"
+            size={18}
+            className="svg-icons"
+            fill="#ffffff"
           />
         )}
 
         <img
           src={img}
           alt={make}
-          className="w-[274px] h-[268px] block rounded-[14px] mb-[14px]"
+          className="w-[274px] h-[268px] block rounded-[14px] mb-[14px] object-cover overflow-hidden"
         />
       </div>
 
@@ -78,7 +76,7 @@ const Card = ({ data }) => {
         <div>
           <p className="text-neutral-900">
             {make}
-            <span className="text-blue-500 "> {model}</span>, {year}
+            <span className="text-blue"> {model}</span>, {year}
           </p>
         </div>
         <div className="text-neutral-900">{rentalPrice}</div>
@@ -97,7 +95,7 @@ const Card = ({ data }) => {
       />
 
       <button
-        className="w-[274px] h-11 bg-blue-500 rounded-xl justify-center items-center inline-flex text-white text-sm font-semibold leading-tight "
+        className="w-[274px]  h-11 bg-blue hover:bg-blueActive focus:bg-blueActive rounded-xl justify-center items-center inline-flex text-white text-sm font-semibold leading-tight "
         onClick={handleModal}
       >
         Learn more
