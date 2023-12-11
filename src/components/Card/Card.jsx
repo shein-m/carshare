@@ -6,8 +6,11 @@ import { FaRegHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { favoritesSlice } from "../../redux/favorites/favorites-slice";
 import { getFavorites } from "../../redux/favorites/favorites-selector";
+import CardModal from "../CardModal/CardModal";
+import { useState } from "react";
 
 const Card = ({ data }) => {
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const dispatch = useDispatch();
   const { addToFavorites, removeFromFavorites } = favoritesSlice.actions;
 
@@ -35,7 +38,9 @@ const Card = ({ data }) => {
     dispatch(addToFavorites(data));
   };
 
-  const handleClick = () => {};
+  const handleModal = () => {
+    setIsOpenModal(!isOpenModal);
+  };
 
   const favorites = useSelector(getFavorites);
 
@@ -88,14 +93,17 @@ const Card = ({ data }) => {
         id={id}
         accessories={accessories}
         functionalities={functionalities}
+        isModal={false}
       />
 
       <button
         className="w-[274px] h-11 bg-blue-500 rounded-xl justify-center items-center inline-flex text-white text-sm font-semibold leading-tight "
-        onClick={handleClick}
+        onClick={handleModal}
       >
         Learn more
       </button>
+
+      {isOpenModal && <CardModal data={data} handleModal={handleModal} />}
     </li>
   );
 };

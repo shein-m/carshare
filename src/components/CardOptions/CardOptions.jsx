@@ -68,6 +68,7 @@ CardOptions.propTypes = {
   id: PropTypes.number,
   accessories: PropTypes.array,
   functionalities: PropTypes.array,
+  isModal: PropTypes.bool,
 };
 
 export default CardOptions;
