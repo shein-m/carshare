@@ -49,7 +49,7 @@ export default {
       },
 
       backgroundImage: {
-        "main-page-desktop": "url('./src/images/main/bgpng.png')",
+        "main-page-desktop": "url('./public/bgpng.png')",
       },
     },
   },
