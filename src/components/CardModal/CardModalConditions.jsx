@@ -18,7 +18,7 @@ const CardModalConditions = ({ rentalConditions, mileage, price }) => {
         <span className="text-neutral-700 text-xs font-normal leading-[18px]">
           {r1}:
         </span>
-        <span className="text-blue-500 text-xs font-semibold">{age}</span>
+        <span className="text-blue text-xs font-semibold">{age}</span>
       </li>
 
       <li className="h-8 px-3.5 py-[7px] bg-stone-50 rounded-[35px] justify-center items-center gap-2 inline-flex">
@@ -37,16 +37,14 @@ const CardModalConditions = ({ rentalConditions, mileage, price }) => {
         <span className="text-neutral-700 text-xs font-normal leading-[18px]">
           Mileage:
         </span>
-        <span className="text-blue-500 text-xs font-semibold">
-          {newMileage}
-        </span>
+        <span className="text-blue text-xs font-semibold">{newMileage}</span>
       </li>
 
       <li className="h-8 px-3.5 py-[7px] bg-stone-50 rounded-[35px] justify-center items-center gap-2 inline-flex">
         <span className="text-neutral-700 text-xs font-normal leading-[18px]">
           Price:
         </span>
-        <span className="text-blue-500 text-xs font-semibold">{newPrice}</span>
+        <span className="text-blue text-xs font-semibold">{newPrice}</span>
       </li>
     </ul>
   );

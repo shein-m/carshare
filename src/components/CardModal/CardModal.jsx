@@ -69,9 +69,9 @@ const CardModal = ({ data, handleModal }) => {
         </div>
 
         <div className="mb-[8px]">
-          <p className="text-neutral-900">
+          <p className="text-text">
             {make}
-            <span className="text-blue-500 "> {model}</span>, {year}
+            <span className="text-blue"> {model}</span>, {year}
           </p>
         </div>
 
@@ -88,11 +88,11 @@ const CardModal = ({ data, handleModal }) => {
             />
           </div>
 
-          <p className=" text-neutral-900 text-sm font-normal">{description}</p>
+          <p className=" text-text text-sm font-normal">{description}</p>
         </div>
 
         <div className="mb-[24px]">
-          <h2 className="text-neutral-900 text-sm font-medium mb-[8px]">
+          <h2 className="text-text text-sm font-medium mb-[8px]">
             Accessories and functionalities:
           </h2>
           <div>
@@ -116,7 +116,7 @@ const CardModal = ({ data, handleModal }) => {
           </div>
         </div>
 
-        <div className="px-[50px] py-3 bg-blue-500 rounded-xl justify-center items-center inline-flex">
+        <div className="px-[50px] py-3 bg-blue rounded-xl justify-center items-center inline-flex">
           <button className="text-white text-sm font-semibold leading-tight">
             Rental car
           </button>
