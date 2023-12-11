@@ -5,7 +5,7 @@ const HomePage = () => {
     <>
       <section>
         <Container>
-          <div className="bg-black md:bg-main-page-desktop bg-cover bg-no-repeat bg-center h-[800px] flex flex-col justify-between">
+          <div className="bg-black md:bg-main-bg bg-cover bg-no-repeat bg-center h-[800px] flex flex-col justify-between">
             <div className="flex justify-center">
               <h1 className=" text-white text-[24px] md:text-[40px] xl:text-[60px] mt-[80px] font-bold text-center mt-[10px] ">
                 Discover the world on wheels with our car rental service
